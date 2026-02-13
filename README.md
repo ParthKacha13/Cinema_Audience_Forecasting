@@ -1,73 +1,38 @@
+# Cinema_Audience_Forecasting
 
----
+Time-Series Forecasting of Daily Cinema Audience Attendance
 
-## 🧠 Key Challenges
+## 📊 Dataset
+Provided by Competition Platform  
+- cinePOS_theaters.csv  
+- booknow_theaters.csv  
+- movie_theater_id_relation.csv  
+- cinePOS_booking.csv  
+- booknow_booking.csv  
+- booknow_visits.csv  
+- date_info.csv  
+- sample_submission.csv  
 
-- Audience influenced by:
-  - Holidays  
-  - Weekends  
-  - Theatre type  
-  - Booking trends  
-- Some theatres may be closed (zero audience days included)
-- Anonymized location data (approximate latitude & longitude)
-- Need to combine both POS and online booking behavior
-
----
-
-## 🛠 Tools & Technologies Used
-
+## 🛠 Tools Used
 - Python  
-- Pandas  
-- NumPy  
+- Pandas, NumPy  
 - Scikit-learn  
-- Matplotlib  
-- Seaborn  
-- Time-Series Feature Engineering  
-
----
+- Matplotlib / Seaborn  
 
 ## 🚀 Approach
+- Data Merging (POS + Online Booking Data)  
+- Date & Holiday Feature Extraction  
+- Lag & Rolling Features for Time-Series  
+- Model Training (Regression-Based Models)  
+- Time-Based Validation  
+- Submission File Generation  
 
-### 1️⃣ Data Preprocessing
-- Merging POS and BookNow datasets
-- Handling missing values
-- Processing date features
-- Encoding categorical variables
+## 🎯 Target
+Predict daily `audience_count`  
+(ID = book_theater_id + show_date)
 
-### 2️⃣ Feature Engineering
-- Extracting day of week, month, weekend flag
-- Holiday impact modeling
-- Aggregating historical booking trends
-- Theatre-level performance metrics
-
-### 3️⃣ Time-Series Modeling
-- Lag features
-- Rolling mean features
-- Regression-based forecasting models
-
-### 4️⃣ Model Training
-- Linear Regression / Tree-based models
-- Cross-validation on time-based splits
-
-### 5️⃣ Submission Generation
-- Predicting future audience counts
-- Formatting output as per sample_submission.csv
-
----
-
-## 📈 Key Insights
-
-- Weekends and holidays significantly increase audience counts.
-- Online booking trends strongly correlate with total attendance.
-- Certain theatre types show consistent seasonal patterns.
-- Zero-audience days correspond to closure days and are excluded from final scoring.
-
----
-
-## 🎯 Conclusion
-
-This project demonstrates practical application of time-series forecasting in real-world business scenarios. It highlights the importance of combining multiple data sources, feature engineering, and temporal modeling to generate reliable attendance predictions.
-
----
-
-⭐ Feel free to explore the notebook and experiment with advanced models such as XGBoost, LightGBM, or LSTM for further improvements.
+## 📈 Key Factors Considered
+- Weekend & Holiday Impact  
+- Online vs POS Booking Trends  
+- Theatre Type & Location  
+- Historical Attendance Patterns  
